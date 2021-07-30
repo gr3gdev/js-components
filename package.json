@@ -1,0 +1,25 @@
+{
+  "name": "js-components",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "grunt",
+    "test": "grunt sample"
+  },
+  "author": "Gregory Tardivel",
+  "license": "MIT",
+  "devDependencies": {
+    "express": "^4.17.1",
+    "grunt": "^1.4.1",
+    "grunt-cli": "^1.4.3",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-cssmin": "^4.0.0",
+    "grunt-contrib-sass": "^2.0.0",
+    "grunt-contrib-uglify-es": "git+https://github.com/gruntjs/grunt-contrib-uglify.git#harmony",
+    "grunt-contrib-watch": "^1.1.0",
+    "grunt-express-server": "^0.5.4",
+    "nodemon": "^2.0.9",
+    "open": "^8.2.1"
+  }
+}

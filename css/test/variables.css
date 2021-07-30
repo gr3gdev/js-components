@@ -1,0 +1,13 @@
+:host {
+    --color: #fff;
+    --border-color: #444;
+    --icon-color: #654300;
+    --selected-color: #bbb;
+    --checked-color: #eee;
+    --background-color: #444;
+    --label-background-color: #ccc;
+    --select-background-color: #fff;
+    --selected-background-color: #1122a4;
+    --button-background-color: #666;
+    --checked-background-color: #1122e7;
+}

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Test</title>
+    <link rel="stylesheet" type="text/css" href="./fontawesome/css/solid.min.css"/>
+    <style>
+        header {
+            font-size: 3em;
+            text-align: center;
+        }
+        footer {
+            font-size: 0.75em;
+            margin-top: 2em;
+        }
+        h1 {
+            font-size: 2em;
+        }
+        h2 {
+            font-size: 1em;
+        }
+    </style>
+</head>
+<body>
+
+    <script type="module" src="./js/components.min.js"></script>
+
+    <header>Fields</header>
+
+    <section role="main">
+
+        <js-tabs>
+            <js-tab label="Inputs">
+                <h1>Inputs</h1>
+                <h2>Type : text</h2>
+                <div>
+                    <js-text name="username" label="Username" label-width="15" icon="user" placeholder="Enter text"></js-text>
+                    <js-text name="text1" label="Text 1" label-width="15" placeholder="Enter text" value="My username"></js-text>
+                </div>
+
+                <h2>Type : password</h2>
+                <div>
+                    <js-password name="password" label="Password" label-width="15" icon="lock" placeholder="Enter text with special characters"></js-password>
+                    <js-password name="password1" label="Simple Password" label-width="15" placeholder="Enter text with special characters" value="password"></js-password>
+                </div>
+
+                <h2>Type : date</h2>
+                <div>
+                    <js-date name="birthdate" label="Birthdate" icon="birthday"></js-date>
+                    <js-date name="date" label="Simple Date" value="2021-07-01"></js-date>
+                </div>
+
+                <h2>Type : time</h2>
+                <div>
+                    <js-time name="hour" label="RDV" icon="clock"></js-time>
+                    <js-time name="time" label="Simple Time" value="10:35"></js-time>
+                </div>
+
+                <h2>Type : file</h2>
+                <div>
+                    <js-file name="file1" label="PJ" icon="file"></js-file>
+                    <js-file name="file2" label="Simple File"></js-file>
+                </div>
+
+                <h2>Type : checkbox</h2>
+                <div>
+                    <js-checkbox name="checkbox1" label="Simple checkbox" value="1" checked="true"></js-checkbox>
+                    <js-checkbox name="checkbox2" label="Checkbox with icon" icon="trash" value="2"></js-checkbox>
+                </div>
+
+                <h2>Type : radio</h2>
+                <div>
+                    <js-radio name="radio1" label="Choose 1" values="[{&quot;key&quot;:&quot;1&quot;,&quot;label&quot;:&quot;Value 1&quot;},{&quot;key&quot;:&quot;2&quot;,&quot;label&quot;:&quot;Value 2&quot;}]"></js-radio>
+                </div>
+                <div style="width: 50em;">
+                    <js-radio name="radio2" label="Choose 2" values="[{&quot;key&quot;:&quot;1&quot;,&quot;label&quot;:&quot;Value 1&quot;},{&quot;key&quot;:&quot;2&quot;,&quot;label&quot;:&quot;Value 2&quot;}]" value="2"></js-radio>
+                </div>
+            </js-tab>
+            <js-tab label="Selects">
+                <h1>Selects</h1>
+                <div>
+                    <h2>Simple select</h2>
+                    <div>
+                        <js-select name="select1" icon="tools" label="Simple select" placeholder="Select a value" value="1"
+                                      values="[{&quot;key&quot;:&quot;1&quot;,&quot;label&quot;:&quot;Value 1&quot;},{&quot;key&quot;:&quot;2&quot;,&quot;label&quot;:&quot;Value 2&quot;}]">
+                        </js-select>
+                        <js-select name="selectGroup1" label="Select with Groups" placeholder="Select a value"
+                                      values="{&quot;Group1&quot;:[{&quot;key&quot;:&quot;group1-value1&quot;,&quot;label&quot;:&quot;Value 1&quot;},{&quot;key&quot;:&quot;group2-value2&quot;,&quot;label&quot;:&quot;Value 2&quot;}],&quot;Group2&quot;:[{&quot;key&quot;:&quot;group2-value3&quot;,&quot;label&quot;:&quot;Value 3&quot;}]}">
+                        </js-select>
+                    </div>
+
+                    <h2>Multi-select</h2>
+                    <div>
+                        <js-multiselect name="multiselect1" icon="link" label="Simple multi-select" placeholder="Select values"
+                                           values="[{&quot;key&quot;:&quot;1&quot;,&quot;label&quot;:&quot;Value 1&quot;},{&quot;key&quot;:&quot;2&quot;,&quot;label&quot;:&quot;Value 2&quot;}]">
+                        </js-multiselect>
+                        <js-multiselect name="multiselectGroup1" label="Multi-select with Groups" placeholder="Select values"
+                                           values="{&quot;Group1&quot;:[{&quot;key&quot;:&quot;group1-value1&quot;,&quot;label&quot;:&quot;Value 1&quot;},{&quot;key&quot;:&quot;group2-value2&quot;,&quot;label&quot;:&quot;Value 2&quot;}],&quot;Group2&quot;:[{&quot;key&quot;:&quot;group2-value3&quot;,&quot;label&quot;:&quot;Value 3&quot;}]}">
+                        </js-multiselect>
+                    </div>
+                </div>
+            </js-tab>
+            <js-tab label="Message">
+                <js-message type="success" value="This is a success message"></js-message>
+                <js-message type="info" value="This is an information message"></js-message>
+                <js-message type="warn" value="This is a warning message"></js-message>
+                <js-message type="error" value="This is an error message"></js-message>
+            </js-tab>
+            <js-tab label="Buttons">
+                <div>
+                    <js-button name="button1" value="Simple button"></js-button>
+                    <js-button name="button2" icon="sign-in" value="Open modal" onclick="document.querySelector('js-modal').show()"></js-button>
+                </div>
+            </js-tab>
+            <js-tab label="Table">
+                <js-table>
+                    <js-table_headers>
+                        <js-table_header>Column1</js-table_header>
+                        <js-table_header>Column2</js-table_header>
+                        <js-table_header width="10em">Column3</js-table_header>
+                    </js-table_headers>
+                    <js-table_line>
+                        <js-table_column>1</js-table_column>
+                        <js-table_column>Test 1</js-table_column>
+                        <js-table_column>
+                            <js-checkbox name="checkLine1" label="Select" value="1" checked="false"></js-checkbox>
+                        </js-table_column>
+                    </js-table_line>
+                    <js-table_line>
+                        <js-table_column>2</js-table_column>
+                        <js-table_column>Test 2</js-table_column>
+                        <js-table_column>
+                            <js-checkbox name="checkLine2" label="Select" value="1" checked="false"></js-checkbox>
+                        </js-table_column>
+                    </js-table_line>
+                </js-table>
+            </js-tab>
+            <js-tab label="List">
+                <js-list>
+                    <js-list-item icon="file">
+                        Item 1
+                        <js-list-item>Child 1</js-list-item>
+                        <js-list-item icon="link">Child 2</js-list-item>
+                    </js-list-item>
+                    <js-list-item>Item 2</js-list-item>
+                    <js-list-item icon="link">Item 3</js-list-item>
+                    <js-list-item>Item 4</js-list-item>
+                </js-list>
+            </js-tab>
+            <js-tab label="Custom CSS">
+                <js-text variables="./test/variables.css" name="usernameCustom" label="Username" label-width="15" icon="user" placeholder="Enter text"></js-text>
+                <js-password variables="./test/variables.css" name="passwordCustom" label="Password" label-width="15" icon="lock" placeholder="Enter text with special characters"></js-password>
+                <js-checkbox variables="./test/variables.css" name="checkboxCustom" label="Simple checkbox" value="1" checked="true"></js-checkbox>
+                <js-radio variables="./test/variables.css" name="radioCustom" label="Choose 1" values="[{&quot;key&quot;:&quot;1&quot;,&quot;label&quot;:&quot;Value 1&quot;},{&quot;key&quot;:&quot;2&quot;,&quot;label&quot;:&quot;Value 2&quot;}]"></js-radio>
+                <js-multiselect variables="./test/variables.css" name="multiselectCustom" icon="link" label="Simple multi-select" placeholder="Select values"
+                                   values="[{&quot;key&quot;:&quot;1&quot;,&quot;label&quot;:&quot;Value 1&quot;},{&quot;key&quot;:&quot;2&quot;,&quot;label&quot;:&quot;Value 2&quot;}]">
+                </js-multiselect>
+            </js-tab>
+        </js-tabs>
+
+        <js-modal name="modal1" title="Modal title" width="35" height="20">
+            <js-text name="modal-username" label="Username" label-width="15" icon="user" placeholder="Enter text"></js-text>
+            <js-password name="modal-password" label="Password" label-width="15" icon="lock" placeholder="Enter text with special characters"></js-password>
+            <js-button name="modal-button" value="Login"></js-button>
+        </js-modal>
+
+    </section>
+    
+    <footer>&copy;&nbsp;2021&nbsp;Gr&eacute;gory&nbsp;Tardivel</footer>
+
+</body>
+</html>

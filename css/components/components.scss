@@ -1,0 +1,474 @@
+$color: "#888888";
+$borderColor: "#888888";
+$iconColor: "#757575";
+$selectedColor: "#ffffff";
+$checkedColor: "#ffffff";
+$backgroundColor: "#ffffff";
+$labelBackgroundColor: "#f4f4f4";
+$selectBackgroundColor: "#e4e4e4";
+$selectedBackgroundColor: "#12ef23";
+$buttonBackgroundColor: "#eeeeee";
+$checkedBackgroundColor: "#78ffaa";
+
+$icons: (
+    "arrows": "\f338",
+    "birthday": "\f1fd",
+    "check": "\f00c",
+    "check-circle": "\f058",
+    "check-square": "\f14a",
+    "clock": "\f017",
+    "cog": "\f013",
+    "edit": "\f044",
+    "exclamation": "\f12a",
+    "exclamation-circle": "\f06a",
+    "file": "\f15b",
+    "info": "\f129",
+    "info-circle": "\f05a",
+    "link": "\f0c1",
+    "lock": "\f023",
+    "sign-in": "\f2f6",
+    "sign-out": "\f2f5",
+    "sort-down": "\f0dd",
+    "sort-up": "\f0de",
+    "square": "\f0c8",
+    "times": "\f00d",
+    "times-circle": "\f057",
+    "tools": "\f7d9",
+    "trash": "\f2ed",
+    "user": "\f007",
+    "user-edit": "\f4ff",
+);
+
+@each $name, $glyph in $icons {
+    i.#{$name}::before {
+        content: $glyph;
+    }
+}
+
+@media screen and (min-width: 400px) {
+    @for $i from 1 through 50 {
+        .w#{$i} {
+            width: #{$i}em !important;
+        }
+        .h#{$i} {
+            height: #{$i}em !important;
+        }
+    }
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+@media screen and (max-width: 400px) {
+    .field.checkbox {
+        display: inline-flex !important;
+    }
+    .field {
+        display: block !important;
+        height: auto;
+    }
+    label {
+        height: auto;
+    }
+    label > span.label {
+        display: block;
+    }
+    .radios {
+        display: block;
+    }
+    .radios > label {
+        display: inline-flex;
+    }
+}
+.common {
+    border: 0;
+    height: 2.5em;
+    appearance: none;
+    font-family: inherit;
+    font-size: inherit;
+    cursor: inherit;
+    line-height: inherit;
+    background-color: var(--background-color, #{$backgroundColor});
+    color: var(--color);
+    width: -moz-available;
+    width: -webkit-fill-available;
+    width: stretch;
+}
+.common:focus, .tab:focus, .close:focus i {
+    outline: 2px solid var(--selected-background-color, #{$selectedBackgroundColor});
+}
+.message {
+    margin: 0.5em;
+    width: calc(100% - 1em);
+    display: inline-flex;
+}
+.message span {
+    display: inherit;
+    line-height: 2.5em;
+    padding-left: 2em;
+}
+.message .info, .message .success, .message .warn, .message .error {
+    width: 100%;
+    padding: 0.5em;
+}
+.message .info i, .message .success i, .message .warn i, .message .error i {
+    color: inherit;
+}
+.message .info {
+    background-color: #f8ffff;
+    color: #0e566c;
+}
+.message .success {
+    background-color: #fcfff5;
+    color: #1a531b;
+}
+.message .warn {
+    background-color: #fffaf3;
+    color: #794b02;
+}
+.message .error {
+    background-color: #fff6f6;
+    color: #912d2b;
+}
+.field {
+    border: 1px solid var(--border-color, #{$borderColor});
+    margin: 0.5em;
+    width: calc(100% - 1em);
+    display: inline-flex;
+}
+.field:hover button {
+    cursor: pointer;
+    background-color: var(--selected-background-color, #{$selectedBackgroundColor});
+    color: var(--selected-color, #{$selectedColor});
+}
+label {
+    width: 100%;
+    min-height: 2.5em;
+    position: relative;
+    display: inherit;
+}
+.field:hover span.label {
+    cursor: pointer;
+    background-color: var(--selected-background-color, #{$selectedBackgroundColor});
+    color: var(--selected-color, #{$selectedColor});
+}
+label.focus span.label {
+    background-color: var(--selected-background-color, #{$selectedBackgroundColor});
+    color: var(--selected-color);
+    outline: 2px solid var(--selected-background-color, #{$selectedBackgroundColor});
+}
+label > span {
+    line-height: 2.5em;
+}
+label > span.label {
+    white-space: nowrap;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    background-color: var(--label-background-color, #{$labelBackgroundColor});
+    font-weight: 700;
+    color: var(--icon-color, #{$iconColor});
+}
+label.focus i {
+    color: var(--selected-color, #{$selectedColor});
+}
+i {
+    text-decoration: none;
+    font-family: "Font Awesome 5 Free";
+    font-weight: normal;
+    font-style : normal;
+    position: absolute;
+    padding: 0.7em 0.5em;
+    color: var(--icon-color);
+    z-index: 10;
+}
+.icon {
+    padding-left: 2em !important;
+}
+.field:hover i {
+    color: var(--selected-color, #{$selectedColor});
+}
+.input {
+    height: 2.5em;
+    width: 100%;
+    padding-left: 3em;
+    user-select: none;
+}
+input::-ms-expand {
+    display: none;
+}
+input {
+    padding-left: 0.5em;
+}
+.button {
+    width: 100%;
+}
+button::-ms-expand {
+    display: none;
+}
+button.common {
+    background-color: var(--button-background-color, #{$buttonBackgroundColor});
+}
+.checkbox .common, .radios .common {
+    cursor: pointer;
+    height: 0;
+    width: 0;
+    position: absolute;
+    opacity: 0;
+}
+input:checked ~ .checkmark {
+    background-color: var(--checked-background-color, #{$checkedBackgroundColor});
+}
+input:checked ~ .checkmark::after {
+    display: block;
+}
+input:focus ~ .checkmark {
+    outline: 2px solid var(--selected-background-color, #{$selectedBackgroundColor});
+}
+.checkmark {
+    position: absolute;
+    margin: 0.5em;
+    height: 1.5em;
+    width: 1.5em;
+    background-color: var(--background-color, #{$backgroundColor});
+    border: 1px solid var(--border-color, #{$borderColor});
+}
+.checkbox:hover input ~ .checkmark {
+    background-color: var(--selected-background-color, #{$selectedBackgroundColor});
+    color: var(--selected-color, #{$selectedColor})
+}
+.checkmark::after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+.checkmark::after {
+    left: 0.5em;
+    top: 0.1em;
+    width: 0.5em;
+    height: 1em;
+    border: solid var(--checked-color, #{$checkedColor});
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+input {
+    padding: 0.45em 0.5em;
+}
+.radios {
+    width: 100%;
+    display: inherit;
+}
+.radio {
+    width: 2.5em;
+}
+.radio:hover input ~ .checkmark {
+    background-color: var(--selected-background-color, #{$selectedBackgroundColor});
+    color: var(--selected-color, #{$selectedColor})
+}
+.radios .checkmark {
+    border-radius: 50%;
+}
+.radios .checkmark::after {
+    border-radius: 50%;
+    width: 0.5em;
+    height: 0.5em;
+    top: 0.45em;
+    left: 0.45em;
+    transform: none;
+    background-color: var(--checked-color, #{$checkedColor});
+}
+.hide {
+    display: none;
+}
+.select {
+    width: -moz-available;
+    width: -webkit-fill-available;
+    width: stretch;
+    display: inherit;
+}
+.multiselect-value {
+    white-space: nowrap;
+    width: auto;
+    line-height: 2.5em;
+    padding-left: 0.5em;
+    padding-right: 1.25em;
+}
+.multiselect-value::after {
+    text-decoration: none;
+    font-family: "Font Awesome 5 Free";
+    font-weight: normal;
+    font-style : normal;
+    color: #666666;
+    content: "\f057";
+    position: absolute;
+    right: 0.5em;
+    font-size: 8pt;
+}
+.multiselect-value:hover {
+    cursor: pointer;
+}
+.multiselect-hide {
+    display: none;
+}
+label.focus .multiselect-value {
+    outline: 2px solid var(--selected-background-color, #{$selectedBackgroundColor});
+}
+.list {
+    width: 100%;
+    height: auto;
+}
+.list ul {
+    list-style: none;
+    width: -moz-available;
+    width: -webkit-fill-available;
+    width: stretch;
+    padding-left: 0;
+}
+.list li {
+    padding: 0.5em;
+    line-height: 1.5em;
+}
+ul.selector, ul.selector ul {
+    list-style: none;
+    position: absolute;
+    z-index: 100;
+    margin: 0;
+    padding-left: 0;
+    width: -moz-available;
+    width: -webkit-fill-available;
+    width: stretch;
+    background-color: var(--select-background-color, #{$selectBackgroundColor});
+}
+ul.selector {
+    top: 2.5em;
+}
+ul.selector li {
+    padding: 0.5em;
+}
+ul.selector li.group span {
+    font-weight: bold;
+}
+ul.selector li > ul {
+    position: relative;
+    margin-top: 1em;
+}
+.selected {
+    background-color: var(--selected-background-color, #{$selectedBackgroundColor});
+    color: var(--selected-color, #{$selectedColor});
+}
+.modal {
+    position: fixed;
+    overflow: auto;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+    z-index: 9999;
+    padding-top: 10em;
+}
+.modal .window {
+    position: relative;
+    background-color: #ffffff;
+    width: max-content;
+    height: max-content;
+    margin: auto;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+    padding: 0.5em;
+}
+.modal label span {
+    font-weight: 700;
+    padding-left: 0.5em;
+}
+.modal .close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0.5em;
+    width: 2.5em;
+    height: 2.5em;
+    background-color: transparent;
+    border: 0;
+}
+.close:focus {
+    outline: none;
+}
+.close i {
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0} 
+    to {top:0; opacity:1}
+}
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+.close {
+    cursor: pointer;
+}
+.tabs .titles {
+    display: inline-flex;
+    width: 100%;
+}
+.tab {
+    width: auto;
+    padding: 0.5em;
+    cursor: pointer;
+    background-color: transparent;
+    border: 1px solid var(--border-color, #{$borderColor});
+    font-size: 1.5em;
+    font-weight: 700;
+}
+.empty {
+    border-bottom: 1px solid  var(--border-color, #{$borderColor});
+    width: -moz-available;
+    width: -webkit-fill-available;
+    width: stretch;
+}
+.tab.active {
+    border-bottom: 0;
+}
+.contents {
+    padding: 1em;
+    border-width: 0 1px 1px 1px;
+    border-style: solid;
+    border-color: var(--border-color, #{$borderColor});
+}
+.contents .content {
+    display: none;
+}
+.contents .content.active {
+    display: block;
+}
+.table {
+    width: 100%;
+}
+.head {
+    background-color: var(--label-background-color, #{$labelBackgroundColor});
+    color: var(--color, #{$color});
+    font-weight: 700;
+}
+.head label, .col {
+    border: 1px solid var(--border-color, #{$borderColor});
+}
+.head, .row {
+    display: grid;
+    line-height: 2.5em;
+}
+.head label, .col {
+    padding: 0.5em;
+}
+.head label {
+    width: auto;
+}
