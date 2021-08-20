@@ -1,7 +1,7 @@
 {
   "name": "js-webcomponents",
   "version": "1.0.0",
-  "description": "",
+  "description": "Module pour générer une librairie contenant des webcomponents Javascript",
   "main": "index.js",
   "repository": {
     "type": "git",
@@ -11,8 +11,6 @@
     "build": "grunt",
     "test": "grunt sample"
   },
-  "author": "Gregory Tardivel",
-  "license": "MIT",
   "devDependencies": {
     "express": "^4.17.1",
     "grunt": "^1.4.1",
@@ -25,5 +23,7 @@
     "grunt-express-server": "^0.5.4",
     "nodemon": "^2.0.9",
     "open": "^8.2.1"
-  }
+  },
+  "author": "Grégory Tardivel",
+  "license": "MIT"
 }
