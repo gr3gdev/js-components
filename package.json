@@ -5,7 +5,7 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/gr3gdev/js-components.git"
+    "url": "https://github.com/gr3gdev/js-webcomponents.git"
   },
   "scripts": {
     "build": "grunt",
