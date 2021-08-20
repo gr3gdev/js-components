@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gr3gdev/js-components.git"
+  },
   "scripts": {
     "build": "grunt",
     "test": "grunt sample"
