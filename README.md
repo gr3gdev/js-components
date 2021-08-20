@@ -1,1 +1,1 @@
-# js-components
+# js-webcomponents
