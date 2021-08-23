@@ -1,0 +1,12 @@
+{
+  "name": "js-webcomponents",
+  "version": "%VERSION%",
+  "description": "Module pour générer une librairie contenant des webcomponents Javascript",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gr3gdev/js-webcomponents.git"
+  },
+  "author": "Grégory Tardivel",
+  "license": "MIT"
+}
