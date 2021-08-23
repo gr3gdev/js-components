@@ -5,7 +5,7 @@ name: Publish
 
 on:
   release:
-    types: [published]
+    types: [created]
 
 jobs:
   build:
@@ -17,6 +17,12 @@ jobs:
     
     steps:
       - uses: actions/checkout@v2
+ 
+      - name: Get release
+        id: get_release
+        uses: bruceadams/get-release@v1.2.2
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
 
       # Setup .npmrc file to publish to npm
       - uses: actions/setup-node@v2
@@ -27,6 +33,7 @@ jobs:
       - run: npm install -g sass
       - run: npm install
       - run: npm run build
-      - run: npm publish
+      - run: sed "s/%VERSION%/${{ steps.get_release.outputs.tag_name }}/" template.json > dist/package.json
+      - run: cd dist/ && npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
