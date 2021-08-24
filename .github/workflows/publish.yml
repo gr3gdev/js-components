@@ -34,7 +34,7 @@ jobs:
       - run: npm install
       - run: npm run build
       - run: sed "s/%VERSION%/${{ steps.get_release.outputs.tag_name }}/" template.json > dist/package.json
-      - run: cd dist/ && cat package.json
-      - run: npm publish
+      - run: cat dist/package.json
+      - run: cd dist/ && npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
